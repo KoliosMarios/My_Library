@@ -14,18 +14,23 @@ import { async } from "@firebase/util";
 function App() {
   const colRef = collection(db, "books");
 
+  const titleInput = document.getElementById("title");
+  const authorInput = document.getElementById("author");
+  const pagesInput = document.getElementById("pages");
+  const readInput = document.getElementById("read");
+
   const [books, setBooks] = useState([]);
   const [newTitle, setNewTitle] = useState("");
   const [newAuthor, setNewAuthor] = useState("");
   const [newPages, setNewPages] = useState(0);
   const [newRead, setNewRead] = useState(false);
 
-  useEffect(() => {
-    const getBooks = async () => {
-      const data = await getDocs(colRef);
-      setBooks(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
-    };
+  const getBooks = async () => {
+    const data = await getDocs(colRef);
+    setBooks(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+  };
 
+  useEffect(() => {    
     getBooks();
   }, []);
 
@@ -36,20 +41,28 @@ function App() {
       pages: Number(newPages),
       read: Boolean(newRead),
     });
-    window.location.reload();
+    getBooks();
+    setNewTitle("");
+    setNewAuthor("");
+    setNewPages("");
+    titleInput.value = " ";
+    authorInput.value = " ";
+    pagesInput.value = " ";
+    readInput.checked = false;
+    setNewRead(false);
   };
 
   const deleteBook = async (id) => {
     const book = doc(db, "books", id);
     await deleteDoc(book);
-    window.location.reload();
+    getBooks();
   };
 
   const updateBook = async (id, read) => {
     const book = doc(db, "books", id);
     const newFields = { read: !read };
     await updateDoc(book, newFields);
-    window.location.reload();
+    getBooks();
   };
 
   return (
