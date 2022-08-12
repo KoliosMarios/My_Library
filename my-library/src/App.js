@@ -115,10 +115,10 @@ function App() {
           }}
         ></input>
         <br />
-        <button onClick={createBook}>Create Book</button>
+        <button id="create_book" onClick={createBook}>Create Book</button>
       </div>
 
-      <table id="library_table">
+      <table>
         <thead>
           <tr>
             <th>Title</th>
@@ -137,6 +137,7 @@ function App() {
                 <td>{book.read ? "Yes" : "No"}</td>
                 <td>
                   <button
+                  id="delete_button"
                     onClick={() => {
                       deleteBook(book.id);
                     }}
@@ -146,6 +147,7 @@ function App() {
                 </td>
                 <td>
                   <button
+                  id="change_button"
                     onClick={() => {
                       updateBook(book.id, book.read);
                     }}

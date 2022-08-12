@@ -2,7 +2,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  background: #432818;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .container {
@@ -10,33 +10,90 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background: #432818;
+  padding-bottom: 30px;
 }
 
 .header {
   display: inline-block;
   width: 100%;
-  padding: 10px;
+  padding: 15px;
   background: #ffe6a7;
+  color: #6F1D1B;
+  font-family: 'Pacifico', cursive;
+  font-size: 50px;
   text-align: center;
 }
 
-.create_book {
+.create_book,
+table {
   border-radius: 5px;
   padding: 30px;
   background: #bb9457;
   margin: 10px;
 }
 
-.create_book label{
+.create_book label {
   background: #bb9457;
 }
 
-.create_book input{
+.create_book input {
   background: #ffe6a7;
   padding: 3px;
   margin-bottom: 5px;
   margin-top: 3px;
   border-radius: 5px;
   border: none;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+
+#create_book {
+  background: #ffe6a7;
+  border-radius: 5px;
+  border: none;
+  padding: 5px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+#create_book:hover {
+  background: #6F1D1B;
+  color: white;
+}
+
+table,
+th,
+td {
+  border: 1px solid;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 5px;
+}
+
+#delete_button,
+#change_button {
+  color: white;
+  border: none;
+  padding: 5px;
+  border-radius: 3px;
+}
+
+#delete_button {
+  background: rgb(110, 0, 0);
+}
+
+#change_button {
+  background: rgb(0, 70, 0);
+}
+
+#delete_button:hover, #change_button:hover {
+  opacity: .5;
 }
