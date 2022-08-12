@@ -2,10 +2,41 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  background: rgb(201, 125, 125);
+  background: #432818;
 }
 
 .container {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.header {
+  display: inline-block;
+  width: 100%;
+  padding: 10px;
+  background: #ffe6a7;
+  text-align: center;
+}
+
+.create_book {
+  border-radius: 5px;
+  padding: 30px;
+  background: #bb9457;
+  margin: 10px;
+}
+
+.create_book label{
+  background: #bb9457;
+}
+
+.create_book input{
+  background: #ffe6a7;
+  padding: 3px;
+  margin-bottom: 5px;
+  margin-top: 3px;
+  border-radius: 5px;
+  border: none;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 }

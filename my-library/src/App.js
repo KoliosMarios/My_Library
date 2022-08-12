@@ -30,7 +30,7 @@ function App() {
     setBooks(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
   };
 
-  useEffect(() => {    
+  useEffect(() => {
     getBooks();
   }, []);
 
@@ -67,52 +67,56 @@ function App() {
 
   return (
     <div className="container">
-      <label htmlFor="title">Title:</label>
-      <br />
-      <input
-        type="string"
-        id="title"
-        placeholder="Title"
-        onChange={(event) => {
-          setNewTitle(event.target.value);
-        }}
-        required
-      />
-      <br />
-      <label htmlFor="author">Author</label>
-      <br />
-      <input
-        type="text"
-        id="author"
-        placeholder="Author"
-        onChange={(event) => {
-          setNewAuthor(event.target.value);
-        }}
-        required
-      />
-      <br />
-      <label htmlFor="pages">pages:</label>
-      <br />
-      <input
-        type="text"
-        id="pages"
-        placeholder="Number Of Pages"
-        onChange={(event) => {
-          setNewPages(event.target.value);
-        }}
-        required
-      />
-      <br />
-      <label htmlFor="read">Read:</label>
-      <input
-        type="checkbox"
-        id="read"
-        onChange={(event) => {
-          setNewRead(event.target.value);
-        }}
-      ></input>
-      <br />
-      <button onClick={createBook}>Create Book</button>
+      <h1 className="header">My Library</h1>
+
+      <div className="create_book">
+        <label htmlFor="title">Title:</label>
+        <br />
+        <input
+          type="string"
+          id="title"
+          placeholder="Title"
+          onChange={(event) => {
+            setNewTitle(event.target.value);
+          }}
+          required
+        />
+        <br />
+        <label htmlFor="author">Author:</label>
+        <br />
+        <input
+          type="text"
+          id="author"
+          placeholder="Author"
+          onChange={(event) => {
+            setNewAuthor(event.target.value);
+          }}
+          required
+        />
+        <br />
+        <label htmlFor="pages">Pages:</label>
+        <br />
+        <input
+          type="text"
+          id="pages"
+          placeholder="Number Of Pages"
+          onChange={(event) => {
+            setNewPages(event.target.value);
+          }}
+          required
+        />
+        <br />
+        <label htmlFor="read">Read:</label>
+        <input
+          type="checkbox"
+          id="read"
+          onChange={(event) => {
+            setNewRead(event.target.value);
+          }}
+        ></input>
+        <br />
+        <button onClick={createBook}>Create Book</button>
+      </div>
 
       <table id="library_table">
         <thead>
